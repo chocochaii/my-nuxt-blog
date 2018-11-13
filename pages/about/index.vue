@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .about-page {
   text-align: center;
   padding: 30px;
