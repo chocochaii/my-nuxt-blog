@@ -45,7 +45,7 @@ export default {
 <style lang="scss" scoped>
 .post-preview {
   display: block;
-  width: 300px;
+  min-width: 300px;
   border: 1px solid #eeeeee;
   margin-bottom: 30px;
   .post-thumbnail {

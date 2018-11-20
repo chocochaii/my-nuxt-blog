@@ -1,5 +1,5 @@
 <template>
-  <div class="single-post-page">
+  <div class="single-post-page grid">
     <section class="post">
       <h1 class="post-title">Title</h1>
       <div class="post-details">
@@ -17,13 +17,13 @@
 <style lang="scss" scoped>
 .single-post-page {
   text-align: center;
-  max-width: 1020px;
   .post {
-    padding: 20px;
     .post-title {
       font-size: 24px;
+      margin: 0;
     }
     .post-details {
+      padding: 20px 0;
       border-bottom: 1px solid #666666;
       .post-detail {
         font-size: 18px;

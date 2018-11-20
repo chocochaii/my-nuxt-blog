@@ -3,32 +3,16 @@
     <section class="intro">
       <h1>Get the latest meow news!</h1>
     </section>
-    <section class="featured-posts">
-      <PostPreview
-        id="1"
-        thumbnail="https://i2-prod.mirror.co.uk/incoming/article11812659.ece/ALTERNATES/s1200/The-Feline-World-Gathers-For-The-Supreme-Cat-Show-2017.jpg"
-        title="Meow World!"
-        previewText="Meow's gonna rule this world" />
-      <PostPreview
-        id="2"
-        thumbnail="https://i2-prod.mirror.co.uk/incoming/article11812659.ece/ALTERNATES/s1200/The-Feline-World-Gathers-For-The-Supreme-Cat-Show-2017.jpg"
-        title="Meow Sun!"
-        previewText="Meow's gonna rule the Sun" />
-      <PostPreview
-        id="3"
-        thumbnail="https://i2-prod.mirror.co.uk/incoming/article11812659.ece/ALTERNATES/s1200/The-Feline-World-Gathers-For-The-Supreme-Cat-Show-2017.jpg"
-        title="Meow Moon!"
-        previewText="Meow's gonna rule the Moon" />
-    </section>
+    <PostList />
   </div>
 </template>
 
 <script>
-import PostPreview from "@/components/posts/PostPreview.vue";
+import PostList from "@/components/posts/PostList.vue";
 
 export default {
   components: {
-    PostPreview
+    PostList
   }
 };
 </script>
