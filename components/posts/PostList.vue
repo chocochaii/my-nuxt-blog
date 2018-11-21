@@ -6,7 +6,8 @@
       :id="post.id"
       :thumbnail="post.thumbnail"
       :title="post.title"
-      :previewText="post.previewText" />
+      :previewText="post.previewText"
+      :is-admin="isAdmin" />
   </section>
 </template>
 
@@ -16,6 +17,12 @@ import PostPreview from "@/components/posts/PostPreview.vue";
 export default {
   components: {
     PostPreview
+  },
+  props: {
+    isAdmin: {
+      type: Boolean,
+      default: false
+    }
   },
   data() {
     return {
