@@ -1,30 +1,39 @@
 <template>
   <div class="admin-new-post-page">
     <section class="new-post-form">
-      <AdminPostForm />
+      <AdminPostForm @submit="onSubmit" />
     </section>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 import AdminPostForm from "@/components/admin/AdminPostForm";
 
 export default {
   layout: "admin",
   components: {
     AdminPostForm
+  },
+  methods: {
+    onSubmit(postData) {
+      axios
+        .post("https://my-nuxt-blog-f8547.firebaseio.com/posts.json", postData)
+        .then(result => console.log(result))
+        .catch(e => console.log(e));
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
+.new-post-form {
+  width: 90%;
+  margin: 20px auto;
+}
+@media (min-width: 768px) {
   .new-post-form {
-    width: 90%;
-    margin: 20px auto;
+    width: 500px;
   }
-  @media (min-width: 768px) {
-    .new-post-form {
-      width: 500px;
-    }
-  }
+}
 </style>
