@@ -15,22 +15,23 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
-  asyncData(context, callback) {
-    setTimeout(() => {
-      callback(null, {
-        loadedPost: {
-          id: "1",
-          thumbnail:
-            "https://i2-prod.mirror.co.uk/incoming/article11812659.ece/ALTERNATES/s1200/The-Feline-World-Gathers-For-The-Supreme-Cat-Show-2017.jpg",
-          title: "Meow World!",
-          previewText: "Meow's gonna rule this world",
-          author: "Chocochaii",
-          updatedDate: new Date(),
-          content: "Some dummy text which is definitely not the preview text"
-        }
-      });
-    }, 1000);
+  asyncData(context) {
+    return axios
+      .get(process.env.baseUrl + "/posts/" + context.params.id + ".json")
+      .then(res => {
+        return {
+          loadedPost: res.data
+        };
+      })
+      .catch(e => context.error(e));
+  },
+  head() {
+    return {
+      title: this.loadedPost.title
+    };
   }
 };
 </script>
