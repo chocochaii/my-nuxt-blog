@@ -1,16 +1,12 @@
 <template>
   <div class="posts-page">
-    <PostList :posts="loadedPosts" />
+    <PostList :posts="loadedPosts"/>
   </div>
 </template>
 
 <script>
-import PostList from "@/components/posts/PostList.vue";
-
 export default {
-  components: {
-    PostList
-  },
+  middleware: 'log',
   computed: {
     loadedPosts() {
       return this.$store.getters.loadedPosts;

@@ -1,13 +1,12 @@
 <template>
   <div class="admin-new-post-page">
     <section class="new-post-form">
-      <AdminPostForm @submit="onSubmit" />
+      <AdminPostForm @submit="onSubmit"/>
     </section>
   </div>
 </template>
 
 <script>
-import axios from "axios";
 import AdminPostForm from "@/components/admin/AdminPostForm";
 
 export default {

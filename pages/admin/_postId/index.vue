@@ -1,13 +1,12 @@
 <template>
   <div class="admin-post-page">
     <section class="update-form">
-      <AdminPostForm :post="loadedPost" @submit="onSubmit" />
+      <AdminPostForm :post="loadedPost" @submit="onSubmit"/>
     </section>
   </div>
 </template>
 
 <script>
-import axios from "axios";
 import AdminPostForm from "@/components/admin/AdminPostForm";
 
 export default {
@@ -16,12 +15,12 @@ export default {
     AdminPostForm
   },
   asyncData(context) {
-    return axios
-      .get(process.env.baseUrl + "/posts/" + context.params.postId + ".json")
-      .then(res => {
+    return context.app.$axios
+      .$get("/posts/" + context.params.postId + ".json")
+      .then(data => {
         return {
           loadedPost: {
-            ...res.data,
+            ...data,
             id: context.params.postId
           }
         };
