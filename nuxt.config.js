@@ -62,7 +62,8 @@ module.exports = {
     }
   },
   env: {
-    baseUrl: process.env.BASE_URL || 'https://my-nuxt-blog-f8547.firebaseio.com'
+    baseUrl: process.env.BASE_URL || 'https://my-nuxt-blog-f8547.firebaseio.com',
+    fbAPIKey: 'AIzaSyA3D21Fu0hHc0WLVQOJIb7oD63ZKU0IUD0'
   },
   transition: {
     name: 'fade',
